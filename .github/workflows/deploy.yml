@@ -1,0 +1,41 @@
+name: Build and Deploy to gh-pages
+permissions:
+  contents: write   # to allow pushing to gh-pages branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-gh-pages
+      cancel-in-progress: true
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # allows the action to push with GITHUB_TOKEN
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: cd frontend && npm ci
+
+      - name: Build
+        run: cd frontend && npm run build
+        env:
+          CI: false
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages            # branch to push the built site to
+          folder: frontend/build               # folder with static site (create-react-app -> build)
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}

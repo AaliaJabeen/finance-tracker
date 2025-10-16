@@ -11,7 +11,7 @@ import Welcome from "./pages/Welcome";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/finance-tracker">
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition duration-300">
         {/* Theme Toggle in top-right */}
         <div className="absolute top-4 right-4">
