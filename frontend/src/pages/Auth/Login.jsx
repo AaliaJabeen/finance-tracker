@@ -28,7 +28,7 @@ function Login() {
     <div
   className="relative w-screen h-screen flex items-center justify-center"
   style={{
-    backgroundImage: `url("/assets/finance-bg2.jpg")`,
+    backgroundImage: `url("/finance-tracker/assets/finance-bg2.jpg")`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
