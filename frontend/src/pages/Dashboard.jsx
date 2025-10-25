@@ -64,7 +64,7 @@ function Dashboard() {
     <div
       className="relative min-h-screen bg-gray-900 text-white overflow-hidden"
       style={{
-        backgroundImage: `url("/finance-tracker/assets/finance-bg3.jpg")`,
+        backgroundImage: `url("/assets/finance-bg3.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

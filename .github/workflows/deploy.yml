@@ -31,11 +31,3 @@ jobs:
         run: cd frontend && npm run build
         env:
           CI: false
-
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages            # branch to push the built site to
-          folder: frontend/build               # folder with static site (create-react-app -> build)
-          clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}

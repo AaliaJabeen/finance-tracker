@@ -35,7 +35,7 @@ function Register() {
     <div
       className="relative w-screen h-screen flex items-center justify-center"
       style={{
-        backgroundImage: `url("/finance-tracker/assets/finance-bg3.jpg")`,
+        backgroundImage: `url("/assets/finance-bg3.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
